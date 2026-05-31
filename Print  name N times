@@ -1,0 +1,36 @@
+/*Question:
+Print your name N times using recursion.
+
+Example:
+Input: N = 5
+
+Output:
+Shaurya
+Shaurya
+Shaurya
+Shaurya
+Shaurya
+*/
+
+#include <iostream>
+using namespace std;
+
+void printName(int i, int n) {
+    if (i > n) return;   // Base Case
+
+    cout << "Shaurya" << endl;
+    printName(i + 1, n); // Recursive Call
+}
+
+int main() {
+    int n;
+    cin >> n;
+
+    printName(1, n);
+    return 0;
+}
+
+/*
+Time Complexity: O(N)
+Space Complexity: O(N) (Recursion Stack)
+*/
