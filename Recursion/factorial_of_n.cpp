@@ -35,12 +35,15 @@ Complexity Analysis:
 Key Learning:
 When a problem can be expressed in terms of a smaller identical subproblem,
 recursion becomes a clean approach, and a correct base case is essential to avoid infinite calls.
+
+Note:
+- This implementation supports inputs from 0 to 20 because 21! overflows long long.
 */
 
 #include <iostream>
 
 long long factorial(int n) {
-    if (n <= 1) {
+    if (n == 0 || n == 1) {
         return 1;
     }
 
@@ -50,6 +53,17 @@ long long factorial(int n) {
 int main() {
     int n;
     std::cin >> n;
+
+    if (n < 0) {
+        std::cout << "Factorial is not defined for negative integers." << '\n';
+        return 0;
+    }
+
+    if (n > 20) {
+        std::cout << "Input too large for 64-bit factorial (max supported n is 20)." << '\n';
+        return 0;
+    }
+
     std::cout << factorial(n) << '\n';
     return 0;
 }
