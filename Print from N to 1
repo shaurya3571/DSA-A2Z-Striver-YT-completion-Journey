@@ -1,0 +1,33 @@
+/*
+Question:
+Print numbers from N to 1 using recursion.
+
+Example:
+Input: N = 5
+
+Output:
+5 4 3 2 1
+*/
+
+#include <iostream>
+using namespace std;
+
+void printNTo1(int n) {
+    if (n < 1) return;   // Base Case
+
+    cout << n << " ";
+    printNTo1(n - 1);
+}
+
+int main() {
+    int n;
+    cin >> n;
+
+    printNTo1(n);
+    return 0;
+}
+
+/*
+Time Complexity: O(N)
+Space Complexity: O(N)
+*/
