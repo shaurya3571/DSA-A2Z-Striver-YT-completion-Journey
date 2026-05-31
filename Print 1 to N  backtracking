@@ -1,0 +1,37 @@
+/*
+Question:
+Print numbers from 1 to N using recursion and backtracking.
+
+Example:
+Input: N = 5
+
+Output:
+1 2 3 4 5
+
+Approach:
+Go till the deepest recursive call first.
+Print while returning from recursion.
+*/
+
+#include <iostream>
+using namespace std;
+
+void print1ToN_Backtracking(int i, int n) {
+    if (i < 1) return;   // Base Case
+
+    print1ToN_Backtracking(i - 1, n);
+    cout << i << " ";
+}
+
+int main() {
+    int n;
+    cin >> n;
+
+    print1ToN_Backtracking(n, n);
+    return 0;
+}
+
+/*
+Time Complexity: O(N)
+Space Complexity: O(N)
+*/
